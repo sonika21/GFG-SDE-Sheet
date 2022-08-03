@@ -7,19 +7,16 @@ class Solution{
     public:
     long long int minValue(int a[], int b[], int n)
     {
-       sort(a,a+n);
-        sort(b,b+n);
-        reverse(b,b+n);
-        
-        long long int  product=1;
-        long long int sum=0;
-        
-        for( long long int i=0;i<n;i++){
-             product=a[i]*b[i];
-             sum = sum+product;
-           
-        }
-        return sum;
+        sort(a, a + n);
+    sort(b, b + n);
+   
+    // Multiplying minimum value of A and maximum
+    // value of B
+    long long int result = 0;
+    for (int i = 0; i < n; i++)
+        result += (a[i] * b[n - i - 1]);
+   
+    return result;
     }
 };
 
